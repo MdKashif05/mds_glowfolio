@@ -1,0 +1,161 @@
+want to create a modern, fully animated personal portfolio website using Bootstrap 5, animated with AOS or Animate.css, based entirely on my attached resume PDF and high-resolution 4K profile photo (profile.jpg).
+
+Please use all the personal information from my resume and design the website with the following sections, color scheme, animations, and features.
+
+
+---
+
+🖼️ DESIGN THEME:
+
+Dark Tech Theme
+
+Background: #0D0D0D or gradient of #0F2027 → #203A43 → #2C5364
+
+Use glassmorphism effects in cards (frosted glass UI)
+
+Neon color accents: #00FFFF (cyan), #00FFAB (green), #FF00FF (purple)
+
+Font: Use Poppins or Orbitron for a futuristic vibe
+
+Hover animations on cards & buttons
+
+3D glowing section headings
+
+
+
+---
+
+🧑‍💼 PERSONAL INFO FROM RESUME:
+
+Name: Md Kashif
+
+Age: 18
+
+Student of CSE 3rd year, 5th semester at Kameshwar Narayan Singh Govt. Polytechnic College
+
+Skills: C++, Python, HTML, CSS, DBMS, MySQL, Java, Computer Graphics
+
+Passionate about AI, Web Development, and Entrepreneurship
+
+Goal: Become a tech entrepreneur by the age of 25
+
+Sports: Football, Basketball, Chess — plays at Khelo India level
+
+Hobbies: Storytelling, Writing, Gym, Exploring AI Tools
+
+
+
+---
+
+🖥️ WEBSITE STRUCTURE:
+
+🔹 1. Hero Section
+
+Use profile.jpg (4K image) inside a rounded glowing frame
+
+Title: "Hi, I’m Md Kashif"
+
+Subtitle with typing effect (Typed.js): “CSE Student”, “Web Developer”, “Future Entrepreneur”, “Athlete”
+
+Animated background gradient (or parallax)
+
+
+🔸 2. About Me
+
+Pull content from my resume
+
+Display a brief story: where I study, my goal, my hobbies, what drives me
+
+Use slide-in animations from left/right
+
+
+🔹 3. Education Section
+
+Timeline or card layout
+
+Show each education level (10th, Diploma, etc.)
+
+Add icons for college/school
+
+
+🔸 4. Skills Section
+
+Animated progress bars or badge clouds
+
+Group skills into: Programming (C++, Python), Web Dev (HTML, CSS, MySQL), CS Subjects (OS, DBMS, Graphics)
+
+
+🔹 5. Projects
+
+Display at least:
+
+Smart Online Examination System
+
+Smart Examination AI
+
+
+Use icons for project types (exam pad, AI brain, etc.)
+
+Buttons: "Live Demo", "Source Code", "Read More"
+
+
+🔸 6. Achievements & Sports
+
+Mention: Khelo India, athlete info, gym, storytelling
+
+Add badges, certificates if found in resume
+
+
+🔹 7. Contact
+
+Use resume contact info
+
+Add working form (or mailto links)
+
+Social links: GitHub, LinkedIn, Email, Phone
+
+
+
+---
+
+🛠️ TECH & INTERACTION FEATURES:
+
+Built with Bootstrap 5
+
+Use AOS or Animate.css for scroll animations
+
+Responsive (Mobile + Desktop)
+
+Scroll-to-top button
+
+Download Resume button
+
+Typewriter intro, glowing buttons
+
+Full smooth-scroll navigation
+
+
+
+---
+
+📁 OUTPUT REQUIREMENTS:
+
+index.html
+
+style.css
+
+script.js
+
+assets/ folder with:
+
+profile.jpg (my photo)
+
+resume.pdf
+
+icons/images used
+
+
+Fully working zip that I can download
+
+
+✅ Please begin after I upload my resume PDF and profile photo named profile.jpg.
