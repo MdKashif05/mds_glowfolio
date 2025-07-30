@@ -20,7 +20,7 @@ export default function EducationSection() {
                   <h5 className="text-lg font-semibold text-blue-500 mb-3">
                     Kameshwar Narayan Singh Govt. Polytechnic College (KNSGP)
                   </h5>
-                  <p className="text-purple-400 mb-4 font-medium">3rd Year, 5th Semester</p>
+                  <p className="text-purple-400 mb-4 font-medium">September 2023 – July 2026</p>
                   <p className="text-text-secondary">
                     Currently pursuing CSE Diploma with focus on programming languages, database management, 
                     and modern web technologies. Actively involved in coding competitions and tech events.

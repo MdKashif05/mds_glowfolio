@@ -36,8 +36,7 @@ export default function AboutSection() {
                     who enjoys strategic thinking.
                   </p>
                   <p className="text-lg text-text-secondary">
-                    I have a passion for storytelling and writing, often documenting my technical journey. 
-                    Fitness is important to me, and I regularly hit the gym. I love exploring new AI tools and 
+                    I have a passion for storytelling and writing. I love exploring new AI tools and 
                     staying updated with the latest tech innovations.
                   </p>
                 </div>

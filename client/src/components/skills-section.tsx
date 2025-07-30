@@ -1,4 +1,4 @@
-import { Code, Globe, Brain } from "lucide-react";
+import { Code, Globe, Brain} from "lucide-react";
 
 const skillCategories = [
   {
