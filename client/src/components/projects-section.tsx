@@ -3,6 +3,15 @@ import { Button } from "@/components/ui/button";
 
 const projects = [
   {
+    title: "KNSGP Student Portal",
+    description: "A centralized student portal for managing academic resources, student profiles, and institutional communication.",
+    icon: Laptop,
+    tech: ["Web Development", "Portal"],
+    status: "Ongoing",
+    demoUrl: "#",
+    githubUrl: "https://github.com/MdKashif05/KNSGP.student_portral"
+  },
+  {
     title: "Smart Online Exam System",
     description: "A comprehensive online examination platform featuring AI-powered proctoring and live monitoring. Ensures fair and efficient remote testing with real-time security features.",
     icon: Laptop,
