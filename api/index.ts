@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Register routes
+// Register routes - we don't need the server return value for Vercel
 registerRoutes(app);
 
 export default app;
