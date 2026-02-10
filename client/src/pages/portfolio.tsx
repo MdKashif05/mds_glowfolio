@@ -13,11 +13,11 @@ export default function Portfolio() {
   const projectsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    document.title = "Md Kashif - Portfolio | MERN Stack Developer";
+    document.title = "Md Kashif - Portfolio | Data Scientist";
     
     const metaDescription = document.createElement("meta");
     metaDescription.name = "description";
-    metaDescription.content = "Md Kashif - MERN Stack Developer & CSE Diploma Student. Explore my projects, skills, and client reviews.";
+    metaDescription.content = "Md Kashif - Data Scientist & CSE Diploma Student. Explore my projects, skills, and client reviews.";
     document.head.appendChild(metaDescription);
 
     return () => {
