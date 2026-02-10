@@ -73,7 +73,7 @@ export default function ProjectsSection() {
                      </a>
 
                      {/* Laptop Container - Responsive Fix */}
-                     <div className="relative border-gray-800 bg-gray-800 border-[4px] md:border-[8px] rounded-t-xl w-full max-w-[300px] md:max-w-[512px] aspect-[512/294] shadow-2xl mx-auto">
+                     <div className="relative border-gray-800 bg-gray-800 border-[4px] md:border-[8px] rounded-t-xl w-full max-w-[300px] md:max-w-[512px] aspect-[512/294] shadow-2xl mx-auto overflow-hidden">
                         <div className="rounded-lg overflow-hidden w-full h-full bg-white dark:bg-gray-800 group-hover:brightness-110 transition-all">
                             <img src={project.image} alt={project.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
                         </div>
@@ -151,7 +151,7 @@ export default function ProjectsSection() {
                      </a>
 
                      {/* Laptop Container - Responsive Fix */}
-                     <div className="relative border-gray-800 bg-gray-800 border-[4px] md:border-[8px] rounded-t-xl w-full max-w-[300px] md:max-w-[512px] aspect-[512/294] shadow-2xl mx-auto">
+                     <div className="relative border-gray-800 bg-gray-800 border-[4px] md:border-[8px] rounded-t-xl w-full max-w-[300px] md:max-w-[512px] aspect-[512/294] shadow-2xl mx-auto overflow-hidden">
                         <div className="rounded-lg overflow-hidden w-full h-full bg-white dark:bg-gray-800 group-hover:brightness-110 transition-all">
                             <img src={project.image} alt={project.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
                         </div>

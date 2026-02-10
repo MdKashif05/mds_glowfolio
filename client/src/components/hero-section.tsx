@@ -161,7 +161,7 @@ export default function HeroSection({ projectsRef }: { projectsRef: React.RefObj
       <SocialSidebar />
 
       {/* Main Content Layer - Overlapping Layout */}
-      <div className="container mx-auto px-6 relative z-20 h-full flex items-center justify-center">
+      <div className="container mx-auto px-6 relative z-20 h-full flex items-center justify-center pb-24 lg:pb-0">
         <div className="w-full max-w-7xl relative flex flex-col lg:flex-row items-center justify-center">
           
           {/* Right Side - Giant Complex K Logo (Placed behind/alongside text) */}
@@ -286,7 +286,7 @@ export default function HeroSection({ projectsRef }: { projectsRef: React.RefObj
           {/* Text Content - Positioned Left but allowing overlap */}
           <div className="w-full lg:w-3/5 text-center lg:text-left space-y-6 pt-10 lg:pt-0 relative z-30 pointer-events-none">
             {/* Pointer events auto for interactive elements */}
-            <div className="pointer-events-auto">
+            <div className="pointer-events-auto relative z-40">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}

@@ -11,7 +11,7 @@ const socialLinks = [
 
 export default function SocialSidebar() {
   return (
-    <div className="fixed right-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-8 z-50">
+    <div className="fixed right-4 lg:right-8 top-1/2 -translate-y-1/2 flex flex-col gap-4 lg:gap-8 z-50">
       {socialLinks.map((link, index) => (
         <a
           key={index}
@@ -21,7 +21,7 @@ export default function SocialSidebar() {
           className="text-gray-400 hover:text-[#00FFA3] transition-all duration-300 hover:-translate-x-2 hover:scale-110"
           aria-label={link.label}
         >
-          <link.icon className="w-8 h-8 drop-shadow-[0_0_8px_rgba(0,255,163,0.3)]" />
+          <link.icon className="w-6 h-6 lg:w-8 lg:h-8 drop-shadow-[0_0_8px_rgba(0,255,163,0.3)]" />
         </a>
       ))}
     </div>
