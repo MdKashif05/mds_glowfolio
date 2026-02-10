@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import React, { useEffect, useMemo, memo } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useTypingEffect } from "@/hooks/use-typing-effect";
+import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
+import { SiMysql, SiPython, SiPandas, SiReact } from "react-icons/si";
 import SocialSidebar from "@/components/social-sidebar";
 
 // Generate clustered shapes for the "dark hive" look
@@ -291,7 +293,7 @@ export default function HeroSection({ projectsRef }: { projectsRef: React.RefObj
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
-                <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-bold text-white tracking-tighter leading-[0.85] mix-blend-normal">
+                <h1 className="text-5xl md:text-7xl lg:text-[10rem] font-bold text-white tracking-tighter leading-[0.9] mix-blend-normal">
                   <span className="block text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">Md</span>
                   <span className="block text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">Kashif</span>
                 </h1>
@@ -320,12 +322,91 @@ export default function HeroSection({ projectsRef }: { projectsRef: React.RefObj
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.8 }}
               >
-                <Button
-                  onClick={handleExploreWork}
-                  className="relative px-8 py-6 bg-gradient-to-r from-[#00A3FF] to-[#00FFA3] text-black font-bold tracking-widest text-sm md:text-base rounded-full shadow-[0_0_20px_rgba(0,163,255,0.5)] hover:shadow-[0_0_30px_rgba(0,163,255,0.8)] hover:scale-105 transition-all duration-300"
-                >
-                  VIEW PROJECTS <span className="ml-2">→</span>
-                </Button>
+                 <Dialog>
+                  <DialogTrigger asChild>
+                    <Button
+                      className="relative px-8 py-6 bg-gradient-to-r from-[#00A3FF] to-[#00FFA3] text-black font-bold tracking-widest text-sm md:text-base rounded-full shadow-[0_0_20px_rgba(0,163,255,0.5)] hover:shadow-[0_0_30px_rgba(0,163,255,0.8)] hover:scale-105 transition-all duration-300"
+                    >
+                      ABOUT ME <span className="ml-2">→</span>
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-6xl w-[95vw] bg-[#111111] border-gray-800 text-white p-0 overflow-hidden">
+                    <DialogTitle className="sr-only">About Me</DialogTitle>
+                    <div className="p-8 lg:p-12 h-full flex items-center">
+                      <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
+                        {/* Left Column */}
+                        <div>
+                           <h2 className="text-4xl font-bold text-[#00A3FF] mb-8 font-orbitron tracking-wide">
+                             ABOUT ME
+                           </h2>
+                           <p className="text-gray-300 text-lg leading-relaxed mb-8">
+                             I’m a Developer and Data Scientist who builds scalable applications and intelligent, data-driven systems. I specialize in combining clean development practices with analytics and machine learning to deliver practical, high-impact solutions.
+                           </p>
+                           
+                           {/* Skills */}
+                           <div className="flex flex-wrap gap-3 mb-12">
+                             {aboutSkills.map((skill, index) => (
+                               <span key={index} className="px-4 py-2 rounded-full border border-gray-700 text-gray-400 text-sm font-medium hover:border-[#00A3FF] hover:text-[#00A3FF] transition-colors cursor-default">
+                                 {skill}
+                               </span>
+                             ))}
+                           </div>
+
+                           {/* Tech Stack */}
+                           <div>
+                             <h3 className="text-xl font-bold text-[#00FFA3] mb-6 font-orbitron min-h-[1.5em]">
+                               {aboutTypingText}<span className="animate-pulse text-[#00FFA3]">|</span>
+                             </h3>
+                             <div className="flex items-center gap-10 flex-wrap justify-start">
+                               <div className="group flex flex-col items-center gap-3 transition-transform hover:scale-110 cursor-pointer relative">
+                                 {/* MySQL */}
+                                 <SiMysql className="w-16 h-16 text-[#00E5FF] drop-shadow-[0_0_8px_rgba(0,229,255,0.5)]" />
+                                 <span className="text-[#00E5FF] font-bold drop-shadow-[0_0_5px_rgba(0,229,255,0.3)] opacity-0 group-hover:opacity-100 transition-opacity absolute top-20 w-max pointer-events-none">MySQL</span>
+                               </div>
+                               <div className="group flex flex-col items-center gap-3 transition-transform hover:scale-110 cursor-pointer relative">
+                                 {/* Matplotlib */}
+                                 <div className="w-16 h-16 flex items-center justify-center bg-white/10 rounded-full p-1 drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">
+                                   <svg viewBox="0 0 100 100" className="w-full h-full" fill="none" strokeWidth="8">
+                                      <path d="M50 50 L80 20" stroke="#FF6B6B" strokeLinecap="round" />
+                                      <path d="M50 50 L80 80" stroke="#4D96FF" strokeLinecap="round" />
+                                      <path d="M50 50 L20 60" stroke="#6BCB77" strokeLinecap="round" />
+                                      <circle cx="50" cy="50" r="40" stroke="#A0E7E5" strokeWidth="2" fill="none" />
+                                   </svg>
+                                 </div>
+                                 <span className="text-[#FF6B6B] font-bold drop-shadow-[0_0_5px_rgba(255,107,107,0.5)] opacity-0 group-hover:opacity-100 transition-opacity absolute top-20 w-max pointer-events-none">Matplotlib</span>
+                               </div>
+                               <div className="group flex flex-col items-center gap-3 transition-transform hover:scale-110 cursor-pointer relative">
+                                 {/* Pandas */}
+                                 <div className="relative drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">
+                                    <SiPandas className="w-16 h-16 text-white" />
+                                 </div>
+                                 <span className="text-white font-bold drop-shadow-[0_0_5px_rgba(255,255,255,0.5)] opacity-0 group-hover:opacity-100 transition-opacity absolute top-20 w-max pointer-events-none">Pandas</span>
+                               </div>
+                               <div className="group flex flex-col items-center gap-3 transition-transform hover:scale-110 cursor-pointer relative">
+                                 {/* React */}
+                                 <SiReact className="w-16 h-16 text-[#00FFFF] drop-shadow-[0_0_8px_rgba(0,255,255,0.6)]" />
+                                 <span className="text-[#00FFFF] font-bold drop-shadow-[0_0_5px_rgba(0,255,255,0.4)] opacity-0 group-hover:opacity-100 transition-opacity absolute top-20 w-max pointer-events-none">React</span>
+                               </div>
+                             </div>
+                           </div>
+                        </div>
+
+                        {/* Right Column - Illustration */}
+                        <div className="hidden lg:flex justify-center items-center relative">
+                          <div className="relative w-full max-w-lg">
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl"></div>
+                            {/* Exact Image from Reference */}
+                            <img 
+                              src="https://anuragsinghbam.com/images/coder.svg" 
+                              alt="Developer at Desk" 
+                              className="w-full h-auto drop-shadow-2xl z-10 relative"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
               </motion.div>
             </div>
           </div>

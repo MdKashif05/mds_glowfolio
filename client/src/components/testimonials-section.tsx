@@ -207,8 +207,8 @@ export default function TestimonialsSection() {
         <div className="absolute left-1/2 top-0 bottom-[140px] w-0.5 bg-gray-200 -translate-x-1/2 hidden lg:block z-0"></div>
 
         {/* Title Box */}
-        <div className="flex justify-center mb-20 pt-32 relative">
-          <h2 className="text-3xl lg:text-4xl font-bold text-[#0083CD] border-2 border-[#0083CD] px-8 py-4 rounded-lg bg-white relative z-20 shadow-sm">
+        <div className="flex justify-center mb-12 lg:mb-20 pt-20 lg:pt-32 relative">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0083CD] border-2 border-[#0083CD] px-6 py-3 lg:px-8 lg:py-4 rounded-lg bg-white relative z-20 shadow-sm text-center">
             What my clients are saying?
           </h2>
         </div>
@@ -316,9 +316,9 @@ export default function TestimonialsSection() {
         </div>
 
         {/* CTA Button & Add Review */}
-        <div className="flex justify-center gap-4 mt-16 relative z-10 bg-white pt-4">
+        <div className="flex flex-col sm:flex-row justify-center gap-4 mt-16 relative z-10 bg-white pt-4 px-4 w-full max-w-lg mx-auto sm:max-w-none">
           <Button 
-            className="bg-white text-[#0083CD] border-2 border-[#0083CD] hover:bg-[#0083CD] hover:text-white px-8 py-6 rounded-lg text-xl font-bold transition-all duration-300 shadow-md flex items-center gap-2"
+            className="w-full sm:w-auto bg-white text-[#0083CD] border-2 border-[#0083CD] hover:bg-[#0083CD] hover:text-white px-8 py-6 rounded-lg text-lg lg:text-xl font-bold transition-all duration-300 shadow-md flex items-center justify-center gap-2"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Let's connect
@@ -326,7 +326,7 @@ export default function TestimonialsSection() {
           
           <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
-              <Button className="bg-[#0083CD] text-white border-2 border-[#0083CD] hover:bg-[#006096] px-8 py-6 rounded-lg text-xl font-bold transition-all duration-300 shadow-md flex items-center gap-2">
+              <Button className="w-full sm:w-auto bg-[#0083CD] text-white border-2 border-[#0083CD] hover:bg-[#006096] px-8 py-6 rounded-lg text-lg lg:text-xl font-bold transition-all duration-300 shadow-md flex items-center justify-center gap-2">
                 <Plus className="w-5 h-5" /> Add Review
               </Button>
             </DialogTrigger>

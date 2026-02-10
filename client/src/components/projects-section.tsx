@@ -44,8 +44,8 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="section bg-white py-20 overflow-hidden">
       <div className="container mx-auto px-4 lg:px-20 relative">
-        <div className="flex justify-center mb-24">
-          <h2 className="text-4xl lg:text-5xl font-bold font-orbitron text-[#00A3FF] border-2 border-[#00A3FF] px-8 py-4 rounded-xl">
+        <div className="flex justify-center mb-16 lg:mb-24">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-orbitron text-[#00A3FF] border-2 border-[#00A3FF] px-6 py-3 lg:px-8 lg:py-4 rounded-xl text-center">
             Latest Works
           </h2>
         </div>
@@ -72,14 +72,15 @@ export default function ProjectsSection() {
                         <div className={`absolute -bottom-2 left-6 w-4 h-4 rotate-45 ${project.bgColor}`}></div>
                      </a>
 
-                     {/* Laptop Container */}
-                     <div className="relative border-gray-800 bg-gray-800 border-[8px] rounded-t-xl h-[172px] md:h-[294px] w-[301px] md:w-[512px] shadow-2xl">
-                        <div className="rounded-lg overflow-hidden h-[156px] md:h-[278px] bg-white dark:bg-gray-800 group-hover:brightness-110 transition-all">
+                     {/* Laptop Container - Responsive Fix */}
+                     <div className="relative border-gray-800 bg-gray-800 border-[4px] md:border-[8px] rounded-t-xl w-full max-w-[300px] md:max-w-[512px] aspect-[512/294] shadow-2xl mx-auto">
+                        <div className="rounded-lg overflow-hidden w-full h-full bg-white dark:bg-gray-800 group-hover:brightness-110 transition-all">
                             <img src={project.image} alt={project.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
                         </div>
                      </div>
-                     <div className="relative mx-auto bg-gray-900 rounded-b-xl rounded-t-sm h-[17px] w-[351px] md:w-[597px] -ml-[25px] md:-ml-[42px]">
-                        <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[40%] h-[4px] bg-gray-700 rounded-b-lg"></div>
+                     {/* Laptop Base */}
+                     <div className="relative mx-auto bg-gray-900 rounded-b-xl rounded-t-sm h-[10px] md:h-[17px] w-[115%] max-w-[350px] md:max-w-[597px] -ml-[7.5%] md:-ml-[42px] mt-0">
+                        <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[40%] h-[2px] md:h-[4px] bg-gray-700 rounded-b-lg"></div>
                      </div>
                   </div>
                 ) : (
@@ -149,14 +150,15 @@ export default function ProjectsSection() {
                         <div className={`absolute -bottom-2 right-6 w-4 h-4 rotate-45 ${project.bgColor}`}></div>
                      </a>
 
-                     {/* Laptop Container */}
-                     <div className="relative border-gray-800 bg-gray-800 border-[8px] rounded-t-xl h-[172px] md:h-[294px] w-[301px] md:w-[512px] shadow-2xl">
-                        <div className="rounded-lg overflow-hidden h-[156px] md:h-[278px] bg-white dark:bg-gray-800 group-hover:brightness-110 transition-all">
+                     {/* Laptop Container - Responsive Fix */}
+                     <div className="relative border-gray-800 bg-gray-800 border-[4px] md:border-[8px] rounded-t-xl w-full max-w-[300px] md:max-w-[512px] aspect-[512/294] shadow-2xl mx-auto">
+                        <div className="rounded-lg overflow-hidden w-full h-full bg-white dark:bg-gray-800 group-hover:brightness-110 transition-all">
                             <img src={project.image} alt={project.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
                         </div>
                      </div>
-                     <div className="relative mx-auto bg-gray-900 rounded-b-xl rounded-t-sm h-[17px] w-[351px] md:w-[597px] -ml-[25px] md:-ml-[42px]">
-                        <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[40%] h-[4px] bg-gray-700 rounded-b-lg"></div>
+                     {/* Laptop Base */}
+                     <div className="relative mx-auto bg-gray-900 rounded-b-xl rounded-t-sm h-[10px] md:h-[17px] w-[115%] max-w-[350px] md:max-w-[597px] -ml-[7.5%] md:-ml-[42px] mt-0">
+                        <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[40%] h-[2px] md:h-[4px] bg-gray-700 rounded-b-lg"></div>
                      </div>
                   </div>
                 )}

@@ -34,7 +34,7 @@ export default function AchievementsSection() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#00A3FF] rounded-full opacity-[0.03] blur-[100px] pointer-events-none"></div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <h2 className="text-3xl lg:text-5xl font-bold font-orbitron text-center mb-16 bg-gradient-to-r from-[#00A3FF] to-[#00FFA3] text-transparent bg-clip-text drop-shadow-[0_0_10px_rgba(0,163,255,0.3)]">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-orbitron text-center mb-12 lg:mb-16 bg-gradient-to-r from-[#00A3FF] to-[#00FFA3] text-transparent bg-clip-text drop-shadow-[0_0_10px_rgba(0,163,255,0.3)]">
           Achievements & Sports
         </h2>
         
