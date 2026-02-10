@@ -1,15 +1,18 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Lightbulb, Send, Linkedin, Github } from "lucide-react";
+import { Mail, Phone, MapPin, Lightbulb, Send, Linkedin, Github, Instagram } from "lucide-react";
+import { FaXTwitter } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import KLogo from "@/components/k-logo";
 
 const socialLinks = [
   { icon: Linkedin, url: "https://www.linkedin.com/in/md-kashif-9426b4357", label: "LinkedIn" },
   { icon: Github, url: "https://github.com/MdKashif05", label: "GitHub" },
   { icon: Mail, url: "mailto:mdkashif3300@gmail.com", label: "Email" },
-  { icon: Phone, url: "tel:7033758217", label: "Phone" }
+  { icon: FaXTwitter, url: "https://x.com/__mdka_shif_321", label: "X" },
+  { icon: Instagram, url: "https://www.instagram.com/m.kashif_05", label: "Instagram" }
 ];
 
 export default function ContactSection() {
@@ -62,28 +65,77 @@ export default function ContactSection() {
 
 
   return (
-    <section id="contact" className="section bg-black/20">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl lg:text-5xl font-bold font-orbitron text-center mb-12 bg-gradient-neon-text">
+    <section id="contact" className="section bg-black/20 relative overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#00FFA3] rounded-full opacity-[0.03] blur-[100px] pointer-events-none"></div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <h2 className="text-3xl lg:text-5xl font-bold font-orbitron text-center mb-16 bg-gradient-to-r from-[#00A3FF] to-[#00FFA3] text-transparent bg-clip-text drop-shadow-[0_0_10px_rgba(0,163,255,0.3)]">
           Let's Connect
         </h2>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="grid lg:grid-cols-3 gap-8 mb-12">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid lg:grid-cols-3 gap-8 mb-16">
             {/* ✅ Contact Form */}
             <div className="lg:col-span-2">
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6 bg-[#0a0a0a]/80 backdrop-blur-md border border-white/5 rounded-2xl p-8 shadow-2xl">
                 <div className="grid md:grid-cols-2 gap-6">
-                  <Input name="name" placeholder="Your Name" value={formData.name} onChange={handleInputChange} required className="glass border-glass-border bg-glass-bg text-white placeholder:text-gray-400 focus:border-cyan-500" />
-                  <Input name="email" type="email" placeholder="Your Email" value={formData.email} onChange={handleInputChange} required className="glass border-glass-border bg-glass-bg text-white placeholder:text-gray-400 focus:border-cyan-500" />
+                  <div className="space-y-2">
+                    <label className="text-gray-400 text-xs uppercase tracking-widest font-bold ml-1">Your Name</label>
+                    <Input 
+                      name="name" 
+                      placeholder="Enter your name" 
+                      value={formData.name} 
+                      onChange={handleInputChange} 
+                      required 
+                      className="bg-[#111] border-white/10 text-white placeholder:text-gray-600 focus:border-[#00A3FF] focus:ring-1 focus:ring-[#00A3FF] h-12 rounded-lg transition-all" 
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-gray-400 text-xs uppercase tracking-widest font-bold ml-1">Your Email</label>
+                    <Input 
+                      name="email" 
+                      type="email" 
+                      placeholder="Enter your email" 
+                      value={formData.email} 
+                      onChange={handleInputChange} 
+                      required 
+                      className="bg-[#111] border-white/10 text-white placeholder:text-gray-600 focus:border-[#00A3FF] focus:ring-1 focus:ring-[#00A3FF] h-12 rounded-lg transition-all" 
+                    />
+                  </div>
                 </div>
 
-                <Input name="subject" placeholder="Subject" value={formData.subject} onChange={handleInputChange} required className="glass border-glass-border bg-glass-bg text-white placeholder:text-gray-400 focus:border-cyan-500" />
+                <div className="space-y-2">
+                  <label className="text-gray-400 text-xs uppercase tracking-widest font-bold ml-1">Subject</label>
+                  <Input 
+                    name="subject" 
+                    placeholder="What's this about?" 
+                    value={formData.subject} 
+                    onChange={handleInputChange} 
+                    required 
+                    className="bg-[#111] border-white/10 text-white placeholder:text-gray-600 focus:border-[#00A3FF] focus:ring-1 focus:ring-[#00A3FF] h-12 rounded-lg transition-all" 
+                  />
+                </div>
 
-                <Textarea name="message" placeholder="Your Message" rows={5} value={formData.message} onChange={handleInputChange} required className="glass border-glass-border bg-glass-bg text-white placeholder:text-gray-400 focus:border-cyan-500 resize-none" />
+                <div className="space-y-2">
+                  <label className="text-gray-400 text-xs uppercase tracking-widest font-bold ml-1">Your Message</label>
+                  <Textarea 
+                    name="message" 
+                    placeholder="Tell me about your project..." 
+                    rows={6} 
+                    value={formData.message} 
+                    onChange={handleInputChange} 
+                    required 
+                    className="bg-[#111] border-white/10 text-white placeholder:text-gray-600 focus:border-[#00A3FF] focus:ring-1 focus:ring-[#00A3FF] resize-none rounded-lg transition-all" 
+                  />
+                </div>
 
-                <div className="text-center">
-                  <Button type="submit" disabled={isSubmitting} className="btn-primary-glow px-8 py-3">
+                <div className="pt-4">
+                  <Button 
+                    type="submit" 
+                    disabled={isSubmitting} 
+                    className="w-full bg-gradient-to-r from-[#00A3FF] to-[#00FFA3] text-black font-bold text-lg py-6 rounded-lg shadow-[0_0_20px_rgba(0,163,255,0.3)] hover:shadow-[0_0_30px_rgba(0,163,255,0.5)] hover:scale-[1.02] transition-all duration-300"
+                  >
                     <Send className="mr-2 h-5 w-5" />
                     {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
@@ -93,29 +145,73 @@ export default function ContactSection() {
 
             {/* ✅ Contact Info */}
             <div className="space-y-6">
-              <div className="glass rounded-2xl p-6">
-                <h4 className="text-xl font-bold text-blue-500 mb-4 flex items-center"><Mail className="mr-2 h-5 w-5" />Get In Touch</h4>
-                <div className="space-y-3">
-                  <p className="flex items-center"><Mail className="mr-3 h-4 w-4 text-emerald-400" /><a href="mailto:mdkashif3300@gmail.com" className="text-white hover:text-blue-500 transition-colors">mdkashif3300@gmail.com</a></p>
-                  <p className="flex items-center"><Phone className="mr-3 h-4 w-4 text-emerald-400" /><a href="tel:7033758217" className="text-white hover:text-blue-500 transition-colors">+91 7033758217</a></p>
-                  <p className="flex items-center"><MapPin className="mr-3 h-4 w-4 text-emerald-400" /><span className="text-white">India</span></p>
+              <div className="bg-[#0a0a0a]/80 backdrop-blur-md border border-white/5 rounded-2xl p-8 hover:border-[#00A3FF]/30 transition-colors duration-300 group">
+                <h4 className="text-xl font-bold text-white mb-6 flex items-center font-orbitron">
+                  <span className="w-10 h-10 rounded-full bg-[#00A3FF]/10 flex items-center justify-center mr-3 group-hover:bg-[#00A3FF]/20 transition-colors">
+                    <Mail className="h-5 w-5 text-[#00A3FF]" />
+                  </span>
+                  Get In Touch
+                </h4>
+                <div className="space-y-4">
+                  <div className="group/link">
+                    <p className="text-xs text-gray-500 uppercase tracking-wider mb-1">Email</p>
+                    <a href="mailto:mdkashif3300@gmail.com" className="text-gray-300 hover:text-[#00FFA3] transition-colors flex items-center gap-2">
+                      mdkashif3300@gmail.com
+                    </a>
+                  </div>
+                  <div className="group/link">
+                    <p className="text-xs text-gray-500 uppercase tracking-wider mb-1">Phone</p>
+                    <a href="tel:7033758217" className="text-gray-300 hover:text-[#00FFA3] transition-colors flex items-center gap-2">
+                      +91 7033758217
+                    </a>
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-500 uppercase tracking-wider mb-1">Location</p>
+                    <p className="text-gray-300 flex items-center gap-2">
+                      India
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <div className="glass rounded-2xl p-6">
-                <h4 className="text-xl font-bold text-purple-400 mb-4 flex items-center"><Lightbulb className="mr-2 h-5 w-5" />Let's Collaborate</h4>
-                <p className="text-text-secondary">I'm always open to discussing new opportunities, innovative projects, and potential collaborations. Whether you're looking for a developer, have a project idea, or just want to connect, feel free to reach out!</p>
+              <div className="bg-[#0a0a0a]/80 backdrop-blur-md border border-white/5 rounded-2xl p-8 hover:border-[#00FFA3]/30 transition-colors duration-300 group h-fit">
+                <h4 className="text-xl font-bold text-white mb-6 flex items-center font-orbitron">
+                  <span className="w-10 h-10 rounded-full bg-[#00FFA3]/10 flex items-center justify-center mr-3 group-hover:bg-[#00FFA3]/20 transition-colors">
+                    <Lightbulb className="h-5 w-5 text-[#00FFA3]" />
+                  </span>
+                  Let's Collaborate
+                </h4>
+                <p className="text-gray-400 leading-relaxed text-sm">
+                  I'm always open to discussing new opportunities, innovative projects, and potential collaborations. Whether you're looking for a developer, have a project idea, or just want to connect, feel free to reach out!
+                </p>
               </div>
             </div>
           </div>
 
-          {/* ✅ Social Links */}
-          <div className="flex justify-center gap-6">
-            {socialLinks.map((link, index) => (
-              <a key={index} href={link.url} target={link.url.startsWith('http') ? '_blank' : undefined} rel={link.url.startsWith('http') ? 'noopener noreferrer' : undefined} className="social-link" aria-label={link.label}>
-                <link.icon className="h-6 w-6" />
-              </a>
-            ))}
+          {/* ✅ Social Links & K Logo */}
+          <div className="flex flex-col items-center gap-8">
+            {/* K Logo - Placed above social links */}
+            <div className="p-4 rounded-full bg-[#111] border border-white/5 shadow-[0_0_30px_rgba(0,163,255,0.1)] group hover:border-[#00FFA3]/30 transition-all duration-300 animate-pulse-slow">
+              <KLogo width="60" height="60" className="group-hover:drop-shadow-[0_0_15px_rgba(0,255,163,0.5)] transition-all duration-300" />
+            </div>
+
+            <div className="flex justify-center gap-8">
+              {socialLinks.map((link, index) => (
+                <a 
+                  key={index} 
+                  href={link.url} 
+                  target={link.url.startsWith('http') ? '_blank' : undefined} 
+                  rel={link.url.startsWith('http') ? 'noopener noreferrer' : undefined} 
+                  className="group relative p-4 bg-[#111] rounded-full border border-white/10 hover:border-[#00FFA3]/50 hover:bg-[#00FFA3]/10 transition-all duration-300 hover:-translate-y-2"
+                  aria-label={link.label}
+                >
+                  <link.icon className="h-6 w-6 text-gray-400 group-hover:text-[#00FFA3] transition-colors" />
+                  <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-xs text-[#00FFA3] opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                    {link.label}
+                  </span>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>

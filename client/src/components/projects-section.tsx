@@ -1,83 +1,167 @@
-import { Laptop, Bot, ExternalLink, Github } from "lucide-react";
+import { ArrowUpRight, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const projects = [
   {
     title: "KNSGP Student Portal",
-    description: "A centralized student portal for managing academic resources, student profiles, and institutional communication.",
-    icon: Laptop,
-    tech: ["Web Development", "Portal"],
-    status: "Ongoing",
-    demoUrl: "#",
-    githubUrl: "https://github.com/MdKashif05/KNSGP.student_portral"
+    subtitle: "(Student Management System)",
+    description: "A centralized student portal for managing academic resources, student profiles, and institutional communication. Features real-time notifications, result tracking, and seamless faculty-student interaction.",
+    image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=2070",
+    tech: ["#react.js", "#node.js", "#mongodb", "#express.js", "#material-ui"],
+    demoUrl: "https://knsgp-student-portral-1.onrender.com/",
+    githubUrl: "https://github.com/MdKashif05/KNSGP.student_portral",
+    color: "text-[#FF5722]", // Orange
+    bgColor: "bg-[#FF5722]",
+    borderColor: "border-[#FF5722]"
   },
   {
     title: "Smart Online Exam System",
-    description: "A comprehensive online examination platform featuring AI-powered proctoring and live monitoring. Ensures fair and efficient remote testing with real-time security features.",
-    icon: Laptop,
-    tech: ["MySQL", "AI Proctoring", "Security"],
-    status: "Ongoing",
+    subtitle: "(AI Proctoring Platform)",
+    description: "A comprehensive online examination platform featuring AI-powered proctoring and live monitoring. Ensures fair and efficient remote testing with real-time security features and automated grading.",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=2070",
+    tech: ["#python", "#django", "#opencv", "#tensorflow", "#mysql"],
     demoUrl: "#",
-    githubUrl: "https://github.com/MdKashif05/smart-online-exam"
+    githubUrl: "https://github.com/MdKashif05/smart-online-exam",
+    color: "text-[#9C27B0]", // Purple
+    bgColor: "bg-[#9C27B0]",
+    borderColor: "border-[#9C27B0]"
   },
   {
-    title: "Smart Examination AI",
-    description: "Advanced AI system for exam monitoring that detects cheating behavior using computer vision. Features face recognition and speech detection for enhanced security.",
-    icon: Bot,
-    tech: ["Python", "AI", "NLP", "Computer Vision"],
-    status: "Completed",
+    title: "Portfolio Website",
+    subtitle: "(Personal Brand)",
+    description: "A modern, responsive portfolio website showcasing my skills, projects, and professional journey. Built with cutting-edge web technologies and designed for optimal user experience and visual appeal.",
+    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=2070",
+    tech: ["#react", "#tailwindcss", "#framer-motion", "#vite"],
     demoUrl: "#",
-    githubUrl: "https://github.com/MdKashif05/smart-online-exam"
+    githubUrl: "https://github.com/MdKashif05/mds_glowfolio",
+    color: "text-[#00A3FF]", // Blue
+    bgColor: "bg-[#00A3FF]",
+    borderColor: "border-[#00A3FF]"
   }
 ];
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="section bg-black/20">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl lg:text-5xl font-bold text-center mb-12 text-emerald-400">
-          Featured Projects
-        </h2>
+    <section id="projects" className="section bg-white py-20 overflow-hidden">
+      <div className="container mx-auto px-4 lg:px-20 relative">
+        <div className="flex justify-center mb-24">
+          <h2 className="text-4xl lg:text-5xl font-bold font-orbitron text-[#00A3FF] border-2 border-[#00A3FF] px-8 py-4 rounded-xl">
+            Latest Works
+          </h2>
+        </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        {/* Central Vertical Line */}
+        <div className="absolute left-1/2 top-32 bottom-0 w-0.5 bg-gray-200 -translate-x-1/2 hidden lg:block"></div>
+
+        <div className="space-y-32">
           {projects.map((project, index) => (
-            <div key={index} className="project-card glass rounded-2xl p-6 lg:p-8">
-              <div className="mb-6">
-                <project.icon className="w-12 h-12 text-blue-500 mb-4" />
-                <h3 className="text-xl lg:text-2xl font-bold text-emerald-400 mb-4">
-                  {project.title}
-                </h3>
-                <p className="text-text-secondary mb-6">{project.description}</p>
+            <div key={index} className="relative flex flex-col lg:flex-row items-center justify-between w-full gap-12 lg:gap-0">
+              
+              {/* Left Side */}
+              <div className={`w-full lg:w-1/2 flex ${
+                index % 2 === 0 ? "justify-end pr-16" : "justify-start pl-16 order-last"
+              }`}>
+                {index % 2 === 0 ? (
+                  /* Image on Left (Even Index) */
+                  <div className="relative group">
+                     {/* Floating Title Tag */}
+                     <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" 
+                        className={`absolute -top-12 left-0 z-20 px-6 py-2 rounded-lg text-white font-bold flex items-center gap-2 shadow-xl transform transition-transform hover:-translate-y-1 ${project.bgColor}`}>
+                        {project.title} <ExternalLink className="w-4 h-4" />
+                        {/* Triangle */}
+                        <div className={`absolute -bottom-2 left-6 w-4 h-4 rotate-45 ${project.bgColor}`}></div>
+                     </a>
 
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tech.map((tech, i) => (
-                    <span key={i} className="tech-badge px-3 py-1 rounded-full text-sm">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex gap-3">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="btn-outline-glow"
-                    onClick={() => window.open(project.demoUrl, "_blank")}
-                  >
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Live Demo
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="btn-outline-glow"
-                    onClick={() => window.open(project.githubUrl, "_blank")}
-                  >
-                    <Github className="mr-2 h-4 w-4" />
-                    Source Code
-                  </Button>
-                </div>
+                     {/* Laptop Container */}
+                     <div className="relative border-gray-800 bg-gray-800 border-[8px] rounded-t-xl h-[172px] md:h-[294px] w-[301px] md:w-[512px] shadow-2xl">
+                        <div className="rounded-lg overflow-hidden h-[156px] md:h-[278px] bg-white dark:bg-gray-800 group-hover:brightness-110 transition-all">
+                            <img src={project.image} alt={project.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                        </div>
+                     </div>
+                     <div className="relative mx-auto bg-gray-900 rounded-b-xl rounded-t-sm h-[17px] w-[351px] md:w-[597px] -ml-[25px] md:-ml-[42px]">
+                        <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[40%] h-[4px] bg-gray-700 rounded-b-lg"></div>
+                     </div>
+                  </div>
+                ) : (
+                  /* Text on Left (Odd Index) */
+                  <div className="text-right">
+                    <h3 className={`text-4xl font-bold mb-3 ${project.color}`}>
+                      {project.title}
+                    </h3>
+                    <p className="text-[#FF5722] font-medium text-xl mb-6">
+                      {project.subtitle}
+                    </p>
+                    <p className="text-gray-600 leading-relaxed mb-8 text-lg">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-3 justify-end">
+                      {project.tech.map((tech, i) => (
+                        <span key={i} className="px-4 py-2 rounded-full bg-gray-50 text-gray-600 text-sm font-medium border border-gray-200 shadow-sm">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
+
+              {/* Center Dot & Connector */}
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden lg:flex items-center justify-center">
+                 <div className={`w-5 h-5 rounded-full border-4 border-white shadow-md z-20 ${project.bgColor}`}></div>
+                 {/* Connector Line */}
+                 <div className={`absolute h-0.5 bg-gray-300 w-16 top-1/2 -translate-y-1/2 -z-10 ${
+                   index % 2 === 0 ? "right-full mr-4" : "left-full ml-4"
+                 }`}></div>
+              </div>
+
+              {/* Right Side */}
+              <div className={`w-full lg:w-1/2 flex ${
+                index % 2 === 0 ? "justify-start pl-16" : "justify-end pr-16 order-first"
+              }`}>
+                {index % 2 === 0 ? (
+                  /* Text on Right (Even Index) */
+                  <div className="text-left">
+                    <h3 className={`text-4xl font-bold mb-3 ${project.color}`}>
+                      {project.title}
+                    </h3>
+                    <p className="text-[#FF5722] font-medium text-xl mb-6">
+                      {project.subtitle}
+                    </p>
+                    <p className="text-gray-600 leading-relaxed mb-8 text-lg">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-3">
+                      {project.tech.map((tech, i) => (
+                        <span key={i} className="px-4 py-2 rounded-full bg-gray-50 text-gray-600 text-sm font-medium border border-gray-200 shadow-sm">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  /* Image on Right (Odd Index) */
+                  <div className="relative group">
+                     {/* Floating Title Tag */}
+                     <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" 
+                        className={`absolute -top-12 right-0 z-20 px-6 py-2 rounded-lg text-white font-bold flex items-center gap-2 shadow-xl transform transition-transform hover:-translate-y-1 ${project.bgColor}`}>
+                        {project.title} <ExternalLink className="w-4 h-4" />
+                        {/* Triangle */}
+                        <div className={`absolute -bottom-2 right-6 w-4 h-4 rotate-45 ${project.bgColor}`}></div>
+                     </a>
+
+                     {/* Laptop Container */}
+                     <div className="relative border-gray-800 bg-gray-800 border-[8px] rounded-t-xl h-[172px] md:h-[294px] w-[301px] md:w-[512px] shadow-2xl">
+                        <div className="rounded-lg overflow-hidden h-[156px] md:h-[278px] bg-white dark:bg-gray-800 group-hover:brightness-110 transition-all">
+                            <img src={project.image} alt={project.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                        </div>
+                     </div>
+                     <div className="relative mx-auto bg-gray-900 rounded-b-xl rounded-t-sm h-[17px] w-[351px] md:w-[597px] -ml-[25px] md:-ml-[42px]">
+                        <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[40%] h-[4px] bg-gray-700 rounded-b-lg"></div>
+                     </div>
+                  </div>
+                )}
+              </div>
+
             </div>
           ))}
         </div>
