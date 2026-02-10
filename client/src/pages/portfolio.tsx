@@ -7,7 +7,6 @@ import TestimonialsSection from "@/components/testimonials-section";
 import ContactSection from "@/components/contact-section";
 import ScrollToTop from "@/components/scroll-to-top";
 import SocialSidebar from "@/components/social-sidebar";
-import KLogo from "@/components/k-logo";
 
 export default function Portfolio() {
   const projectsRef = useRef<HTMLDivElement>(null);
