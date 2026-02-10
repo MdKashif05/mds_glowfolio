@@ -329,7 +329,7 @@ export default function HeroSection({ projectsRef }: { projectsRef: React.RefObj
                       ABOUT ME <span className="ml-2">→</span>
                     </Button>
                   </DialogTrigger>
-                  <DialogContent className="max-w-6xl w-[95vw] bg-[#111111] border-gray-800 text-white p-0 overflow-hidden">
+                  <DialogContent className="max-w-6xl w-[95vw] bg-[#111111] border-gray-800 text-white p-0 overflow-y-auto max-h-[90vh]">
                     <DialogTitle className="sr-only">About Me</DialogTitle>
                     <div className="p-8 lg:p-12 h-full flex items-center">
                       <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
