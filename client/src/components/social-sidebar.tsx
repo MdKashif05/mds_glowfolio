@@ -11,17 +11,17 @@ const socialLinks = [
 
 export default function SocialSidebar() {
   return (
-    <div className="hidden lg:flex fixed right-8 top-1/2 -translate-y-1/2 flex-col gap-8 z-50">
+    <div className="fixed right-4 top-1/2 -translate-y-1/2 flex flex-col gap-6 z-50">
       {socialLinks.map((link, index) => (
         <a
           key={index}
           href={link.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-gray-400 hover:text-[#00FFA3] transition-all duration-300 hover:-translate-x-2 hover:scale-110"
+          className="text-gray-400 hover:text-[#00FFA3] transition-all duration-300 hover:-translate-x-2 hover:scale-110 p-2 bg-black/20 backdrop-blur-sm rounded-full border border-white/5 lg:bg-transparent lg:border-none lg:p-0"
           aria-label={link.label}
         >
-          <link.icon className="w-8 h-8 drop-shadow-[0_0_8px_rgba(0,255,163,0.3)]" />
+          <link.icon className="w-5 h-5 lg:w-8 lg:h-8 drop-shadow-[0_0_8px_rgba(0,255,163,0.3)]" />
         </a>
       ))}
     </div>
