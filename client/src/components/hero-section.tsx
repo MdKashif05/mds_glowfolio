@@ -168,7 +168,6 @@ export default function HeroSection({ projectsRef }: { projectsRef: React.RefObj
           {/* Using absolute positioning on desktop to allow overlap - FIXED POSITION */}
           <motion.div 
             className="relative lg:absolute lg:right-[5%] lg:top-1/2 lg:-translate-y-1/2 w-[300px] h-[300px] md:w-[500px] md:h-[500px] lg:w-[700px] lg:h-[700px] select-none pointer-events-none z-10 opacity-80 lg:opacity-100"
-            // Removed spring parallax for stability as requested
           >
              <svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full drop-shadow-2xl">
                <defs>
@@ -416,7 +415,7 @@ export default function HeroSection({ projectsRef }: { projectsRef: React.RefObj
 
       {/* Bottom Indicator */}
       <motion.div 
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer z-30" 
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer z-30 pointer-events-auto" 
         onClick={handleExploreWork}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

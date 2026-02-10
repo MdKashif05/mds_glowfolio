@@ -11,7 +11,7 @@ const socialLinks = [
 
 export default function SocialSidebar() {
   return (
-    <div className="absolute right-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-8 z-50">
+    <div className="fixed right-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-8 z-50">
       {socialLinks.map((link, index) => (
         <a
           key={index}
