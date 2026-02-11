@@ -6,7 +6,6 @@ import AchievementsSection from "@/components/achievements-section";
 import TestimonialsSection from "@/components/testimonials-section";
 import ContactSection from "@/components/contact-section";
 import ScrollToTop from "@/components/scroll-to-top";
-import SocialSidebar from "@/components/social-sidebar";
 
 export default function Portfolio() {
   const projectsRef = useRef<HTMLDivElement>(null);

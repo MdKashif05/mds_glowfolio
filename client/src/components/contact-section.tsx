@@ -78,7 +78,7 @@ export default function ContactSection() {
           <div className="grid lg:grid-cols-3 gap-8 mb-16">
             {/* ✅ Contact Form */}
             <div className="lg:col-span-2">
-              <form onSubmit={handleSubmit} className="space-y-6 bg-[#0a0a0a]/80 backdrop-blur-md border border-white/5 rounded-2xl p-8 shadow-2xl">
+              <form onSubmit={handleSubmit} className="space-y-6 bg-[#0a0a0a]/80 backdrop-blur-md border border-white/5 rounded-2xl p-6 md:p-8 shadow-2xl">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-gray-400 text-xs uppercase tracking-widest font-bold ml-1">Your Name</label>
@@ -145,7 +145,7 @@ export default function ContactSection() {
 
             {/* ✅ Contact Info */}
             <div className="space-y-6">
-              <div className="bg-[#0a0a0a]/80 backdrop-blur-md border border-white/5 rounded-2xl p-8 hover:border-[#00A3FF]/30 transition-colors duration-300 group">
+              <div className="bg-[#0a0a0a]/80 backdrop-blur-md border border-white/5 rounded-2xl p-6 md:p-8 hover:border-[#00A3FF]/30 transition-colors duration-300 group">
                 <h4 className="text-xl font-bold text-white mb-6 flex items-center font-orbitron">
                   <span className="w-10 h-10 rounded-full bg-[#00A3FF]/10 flex items-center justify-center mr-3 group-hover:bg-[#00A3FF]/20 transition-colors">
                     <Mail className="h-5 w-5 text-[#00A3FF]" />
@@ -155,26 +155,26 @@ export default function ContactSection() {
                 <div className="space-y-4">
                   <div className="group/link">
                     <p className="text-xs text-gray-500 uppercase tracking-wider mb-1">Email</p>
-                    <a href="mailto:mdkashif3300@gmail.com" className="text-gray-300 hover:text-[#00FFA3] transition-colors flex items-center gap-2">
+                    <a href="mailto:mdkashif3300@gmail.com" className="text-gray-300 hover:text-[#00FFA3] transition-colors flex items-center gap-2 text-sm md:text-base">
                       mdkashif3300@gmail.com
                     </a>
                   </div>
                   <div className="group/link">
                     <p className="text-xs text-gray-500 uppercase tracking-wider mb-1">Phone</p>
-                    <a href="tel:7033758217" className="text-gray-300 hover:text-[#00FFA3] transition-colors flex items-center gap-2">
+                    <a href="tel:7033758217" className="text-gray-300 hover:text-[#00FFA3] transition-colors flex items-center gap-2 text-sm md:text-base">
                       +91 7033758217
                     </a>
                   </div>
                   <div>
                     <p className="text-xs text-gray-500 uppercase tracking-wider mb-1">Location</p>
-                    <p className="text-gray-300 flex items-center gap-2">
+                    <p className="text-gray-300 flex items-center gap-2 text-sm md:text-base">
                       India
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-[#0a0a0a]/80 backdrop-blur-md border border-white/5 rounded-2xl p-8 hover:border-[#00FFA3]/30 transition-colors duration-300 group h-fit">
+              <div className="bg-[#0a0a0a]/80 backdrop-blur-md border border-white/5 rounded-2xl p-6 md:p-8 hover:border-[#00A3FF]/30 transition-colors duration-300 group h-fit">
                 <h4 className="text-xl font-bold text-white mb-6 flex items-center font-orbitron">
                   <span className="w-10 h-10 rounded-full bg-[#00FFA3]/10 flex items-center justify-center mr-3 group-hover:bg-[#00FFA3]/20 transition-colors">
                     <Lightbulb className="h-5 w-5 text-[#00FFA3]" />
@@ -195,17 +195,17 @@ export default function ContactSection() {
               <KLogo width="60" height="60" className="group-hover:drop-shadow-[0_0_15px_rgba(0,255,163,0.5)] transition-all duration-300" />
             </div>
 
-            <div className="flex justify-center gap-8">
+            <div className="flex justify-center gap-4 md:gap-8 flex-wrap">
               {socialLinks.map((link, index) => (
                 <a 
                   key={index} 
                   href={link.url} 
                   target={link.url.startsWith('http') ? '_blank' : undefined} 
                   rel={link.url.startsWith('http') ? 'noopener noreferrer' : undefined} 
-                  className="group relative p-4 bg-[#111] rounded-full border border-white/10 hover:border-[#00FFA3]/50 hover:bg-[#00FFA3]/10 transition-all duration-300 hover:-translate-y-2"
+                  className="group relative p-3 md:p-4 bg-[#111] rounded-full border border-white/10 hover:border-[#00FFA3]/50 hover:bg-[#00FFA3]/10 transition-all duration-300 hover:-translate-y-2"
                   aria-label={link.label}
                 >
-                  <link.icon className="h-6 w-6 text-gray-400 group-hover:text-[#00FFA3] transition-colors" />
+                  <link.icon className="h-5 w-5 md:h-6 md:w-6 text-gray-400 group-hover:text-[#00FFA3] transition-colors" />
                   <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-xs text-[#00FFA3] opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
                     {link.label}
                   </span>

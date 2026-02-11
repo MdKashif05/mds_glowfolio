@@ -232,7 +232,7 @@ export default function TestimonialsSection() {
             <CarouselContent>
               {allTestimonials.map((testimonial, index) => (
                 <CarouselItem key={testimonial.id} className="basis-full">
-                  <div className="bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] p-8 lg:p-12 mx-4 lg:mx-12 border border-gray-100 flex flex-col lg:flex-row items-center gap-8 lg:gap-12 min-h-[300px] relative z-20 group">
+                  <div className="bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] p-6 md:p-8 lg:p-12 mx-2 md:mx-4 lg:mx-12 border border-gray-100 flex flex-col lg:flex-row items-center gap-6 md:gap-8 lg:gap-12 min-h-[300px] relative z-20 group">
                     
                     {/* Delete Button (Only for dynamically added reviews) */}
                     {testimonial.isDeletable && (
@@ -262,13 +262,13 @@ export default function TestimonialsSection() {
 
                     {/* Content */}
                     <div className="flex-grow text-center lg:text-left">
-                      <Quote className="w-10 h-10 text-gray-200 mb-4 mx-auto lg:mx-0 fill-gray-100" />
-                      <p className="text-gray-600 text-lg lg:text-xl leading-relaxed italic mb-6">
+                      <Quote className="w-8 h-8 lg:w-10 lg:h-10 text-gray-200 mb-4 mx-auto lg:mx-0 fill-gray-100" />
+                      <p className="text-gray-600 text-base md:text-lg lg:text-xl leading-relaxed italic mb-6">
                         "{testimonial.content}"
                       </p>
                       <div>
-                        <h4 className="text-[#0083CD] text-2xl font-bold mb-1">{testimonial.name}</h4>
-                        <p className="text-gray-400 font-medium">{testimonial.role}</p>
+                        <h4 className="text-[#0083CD] text-xl md:text-2xl font-bold mb-1">{testimonial.name}</h4>
+                        <p className="text-gray-400 text-sm md:text-base font-medium">{testimonial.role}</p>
                       </div>
                     </div>
 

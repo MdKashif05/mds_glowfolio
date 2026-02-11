@@ -167,7 +167,7 @@ export default function HeroSection({ projectsRef }: { projectsRef: React.RefObj
           {/* Right Side - Giant Complex K Logo (Placed behind/alongside text) */}
           {/* Using absolute positioning on desktop to allow overlap - FIXED POSITION */}
           <motion.div 
-            className="relative lg:absolute lg:right-[5%] lg:top-1/2 lg:-translate-y-1/2 w-[300px] h-[300px] md:w-[500px] md:h-[500px] lg:w-[700px] lg:h-[700px] select-none pointer-events-none z-10 opacity-80 lg:opacity-100"
+            className="relative lg:absolute lg:right-[5%] lg:top-1/2 lg:-translate-y-1/2 w-[250px] h-[250px] md:w-[500px] md:h-[500px] lg:w-[700px] lg:h-[700px] select-none pointer-events-none z-10 opacity-80 lg:opacity-100"
           >
              <svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full drop-shadow-2xl">
                <defs>
@@ -284,7 +284,7 @@ export default function HeroSection({ projectsRef }: { projectsRef: React.RefObj
           </motion.div>
 
           {/* Text Content - Positioned Left but allowing overlap */}
-          <div className="w-full lg:w-3/5 text-center lg:text-left space-y-6 pt-10 lg:pt-0 relative z-30 pointer-events-none">
+          <div className="w-full lg:w-3/5 text-center lg:text-left space-y-3 md:space-y-6 pt-2 md:pt-10 lg:pt-0 relative z-30 pointer-events-none">
             {/* Pointer events auto for interactive elements */}
             <div className="pointer-events-auto relative z-40">
               <motion.div
@@ -292,31 +292,31 @@ export default function HeroSection({ projectsRef }: { projectsRef: React.RefObj
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
-                <h1 className="text-5xl md:text-7xl lg:text-[10rem] font-bold text-white tracking-tighter leading-[0.9] mix-blend-normal">
+                <h1 className="text-4xl md:text-7xl lg:text-[10rem] font-bold text-white tracking-tighter leading-[0.9] mix-blend-normal">
                   <span className="block text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">Md</span>
                   <span className="block text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">Kashif</span>
                 </h1>
               </motion.div>
               
               <motion.div 
-                className="flex items-center justify-center lg:justify-start gap-4 mt-6"
+                className="flex items-center justify-center lg:justify-start gap-4 mt-4 md:mt-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
                  <motion.div 
-                   className="h-[2px] w-12 bg-[#00FFA3]"
+                   className="h-[2px] w-8 md:w-12 bg-[#00FFA3]"
                    initial={{ width: 0 }}
-                   animate={{ width: 48 }}
+                   animate={{ width: 32 }}
                    transition={{ delay: 0.5, duration: 0.5 }}
                  ></motion.div>
-                 <h2 className="text-lg md:text-xl font-medium tracking-[0.2em] text-[#00FFA3] uppercase font-orbitron min-h-[1.5em]">
+                 <h2 className="text-base md:text-xl font-medium tracking-[0.2em] text-[#00FFA3] uppercase font-orbitron min-h-[1.5em]">
                    {typingText}<span className="animate-pulse">|</span>
                  </h2>
               </motion.div>
 
               <motion.div 
-                className="pt-12 flex items-center justify-center lg:justify-start gap-6"
+                className="pt-8 md:pt-12 flex items-center justify-center lg:justify-start gap-4 md:gap-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.8 }}

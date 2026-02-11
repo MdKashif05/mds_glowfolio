@@ -1,5 +1,6 @@
 import { ArrowUpRight, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -42,62 +43,79 @@ const projects = [
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="section bg-white py-20 overflow-hidden">
-      <div className="container mx-auto px-4 lg:px-20 relative">
-        <div className="flex justify-center mb-16 lg:mb-24">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-orbitron text-[#00A3FF] border-2 border-[#00A3FF] px-6 py-3 lg:px-8 lg:py-4 rounded-xl text-center">
+    <section id="projects" className="section bg-gradient-to-b from-white to-gray-50 py-24 overflow-hidden relative">
+      {/* Background Decor */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-100 rounded-full blur-[100px] opacity-30 pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-100 rounded-full blur-[100px] opacity-30 pointer-events-none"></div>
+
+      <div className="container mx-auto px-4 lg:px-20 relative z-10">
+        <div className="flex justify-center mb-20 lg:mb-32">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold font-orbitron text-[#00A3FF] border-b-4 border-[#00A3FF] pb-4 px-4 text-center tracking-wider drop-shadow-sm"
+          >
             Latest Works
-          </h2>
+          </motion.h2>
         </div>
 
         {/* Central Vertical Line */}
-        <div className="absolute left-1/2 top-32 bottom-0 w-0.5 bg-gray-200 -translate-x-1/2 hidden lg:block"></div>
+        <div className="absolute left-1/2 top-40 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-gray-200 to-transparent -translate-x-1/2 hidden lg:block"></div>
 
-        <div className="space-y-32">
+        <div className="space-y-24 md:space-y-40">
           {projects.map((project, index) => (
-            <div key={index} className="relative flex flex-col lg:flex-row items-center justify-between w-full gap-12 lg:gap-0">
+            <motion.div 
+              key={index} 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              className="relative flex flex-col lg:flex-row items-center justify-between w-full gap-16 lg:gap-24"
+            >
               
               {/* Left Side */}
-              <div className={`w-full lg:w-1/2 flex ${
-                index % 2 === 0 ? "justify-end pr-16" : "justify-start pl-16 order-last"
+              <div className={`w-full lg:w-1/2 flex justify-center lg:justify-end lg:pr-20 ${
+                index % 2 !== 0 ? "order-last lg:order-none" : ""
               }`}>
                 {index % 2 === 0 ? (
                   /* Image on Left (Even Index) */
-                  <div className="relative group">
+                  <div className="relative group w-full max-w-[300px] md:max-w-[550px]">
                      {/* Floating Title Tag */}
                      <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" 
-                        className={`absolute -top-12 left-0 z-20 px-6 py-2 rounded-lg text-white font-bold flex items-center gap-2 shadow-xl transform transition-transform hover:-translate-y-1 ${project.bgColor}`}>
-                        {project.title} <ExternalLink className="w-4 h-4" />
+                        className={`absolute -top-14 left-0 z-20 px-8 py-3 rounded-xl text-white font-bold flex items-center gap-2 shadow-2xl transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 ${project.bgColor}`}>
+                        {project.title} <ExternalLink className="w-5 h-5" />
                         {/* Triangle */}
-                        <div className={`absolute -bottom-2 left-6 w-4 h-4 rotate-45 ${project.bgColor}`}></div>
+                        <div className={`absolute -bottom-2 left-8 w-4 h-4 rotate-45 ${project.bgColor}`}></div>
                      </a>
 
-                     {/* Laptop Container - Responsive Fix */}
-                     <div className="relative border-gray-800 bg-gray-800 border-[4px] md:border-[8px] rounded-t-xl w-full max-w-[300px] md:max-w-[512px] aspect-[512/294] shadow-2xl mx-auto overflow-hidden">
-                        <div className="rounded-lg overflow-hidden w-full h-full bg-white dark:bg-gray-800 group-hover:brightness-110 transition-all">
-                            <img src={project.image} alt={project.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                     {/* Laptop Container */}
+                     <div className="relative border-gray-800 bg-gray-800 border-[4px] md:border-[10px] rounded-t-2xl w-full aspect-[512/294] shadow-[0_20px_50px_rgba(0,0,0,0.3)] mx-auto overflow-hidden transform transition-transform duration-500 group-hover:scale-[1.02]">
+                        <div className="rounded-lg overflow-hidden w-full h-full bg-white dark:bg-gray-800">
+                            <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                         </div>
                      </div>
                      {/* Laptop Base */}
-                     <div className="relative mx-auto bg-gray-900 rounded-b-xl rounded-t-sm h-[10px] md:h-[17px] w-[115%] max-w-[350px] md:max-w-[597px] -ml-[7.5%] md:-ml-[42px] mt-0">
+                     <div className="relative mx-auto bg-gray-900 rounded-b-xl rounded-t-sm h-[12px] md:h-[20px] w-[110%] -ml-[5%] mt-0 shadow-xl">
                         <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[40%] h-[2px] md:h-[4px] bg-gray-700 rounded-b-lg"></div>
                      </div>
                   </div>
                 ) : (
                   /* Text on Left (Odd Index) */
-                  <div className="text-right">
-                    <h3 className={`text-4xl font-bold mb-3 ${project.color}`}>
+                  <div className="text-center lg:text-right w-full relative z-10">
+                    <h3 className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-4 ${project.color} drop-shadow-sm`}>
                       {project.title}
                     </h3>
-                    <p className="text-[#FF5722] font-medium text-xl mb-6">
+                    <p className="text-[#FF5722] font-semibold text-xl md:text-2xl mb-8 tracking-wide">
                       {project.subtitle}
                     </p>
-                    <p className="text-gray-600 leading-relaxed mb-8 text-lg">
+                    <p className="text-gray-600 leading-relaxed mb-10 text-lg md:text-xl font-medium max-w-xl ml-auto">
                       {project.description}
                     </p>
-                    <div className="flex flex-wrap gap-3 justify-end">
+                    <div className="flex flex-wrap gap-3 justify-center lg:justify-end">
                       {project.tech.map((tech, i) => (
-                        <span key={i} className="px-4 py-2 rounded-full bg-gray-50 text-gray-600 text-sm font-medium border border-gray-200 shadow-sm">
+                        <span key={i} className="px-5 py-2.5 rounded-full bg-white text-gray-700 text-sm font-bold border border-gray-200 shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                           {tech}
                         </span>
                       ))}
@@ -107,33 +125,33 @@ export default function ProjectsSection() {
               </div>
 
               {/* Center Dot & Connector */}
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden lg:flex items-center justify-center">
-                 <div className={`w-5 h-5 rounded-full border-4 border-white shadow-md z-20 ${project.bgColor}`}></div>
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden lg:flex items-center justify-center z-10">
+                 <div className={`w-6 h-6 rounded-full border-4 border-white shadow-[0_0_20px_rgba(0,0,0,0.2)] z-20 ${project.bgColor} transform transition-transform hover:scale-150 duration-300`}></div>
                  {/* Connector Line */}
-                 <div className={`absolute h-0.5 bg-gray-300 w-16 top-1/2 -translate-y-1/2 -z-10 ${
-                   index % 2 === 0 ? "right-full mr-4" : "left-full ml-4"
+                 <div className={`absolute h-[2px] bg-gray-300 w-24 top-1/2 -translate-y-1/2 -z-10 ${
+                   index % 2 === 0 ? "right-full mr-6" : "left-full ml-6"
                  }`}></div>
               </div>
 
               {/* Right Side */}
-              <div className={`w-full lg:w-1/2 flex ${
-                index % 2 === 0 ? "justify-start pl-16" : "justify-end pr-16 order-first"
+              <div className={`w-full lg:w-1/2 flex justify-center lg:justify-start lg:pl-20 ${
+                index % 2 !== 0 ? "order-first lg:order-none" : ""
               }`}>
                 {index % 2 === 0 ? (
                   /* Text on Right (Even Index) */
-                  <div className="text-left">
-                    <h3 className={`text-4xl font-bold mb-3 ${project.color}`}>
+                  <div className="text-center lg:text-left w-full relative z-10">
+                    <h3 className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-4 ${project.color} drop-shadow-sm`}>
                       {project.title}
                     </h3>
-                    <p className="text-[#FF5722] font-medium text-xl mb-6">
+                    <p className="text-[#FF5722] font-semibold text-xl md:text-2xl mb-8 tracking-wide">
                       {project.subtitle}
                     </p>
-                    <p className="text-gray-600 leading-relaxed mb-8 text-lg">
+                    <p className="text-gray-600 leading-relaxed mb-10 text-lg md:text-xl font-medium max-w-xl mr-auto">
                       {project.description}
                     </p>
-                    <div className="flex flex-wrap gap-3">
+                    <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
                       {project.tech.map((tech, i) => (
-                        <span key={i} className="px-4 py-2 rounded-full bg-gray-50 text-gray-600 text-sm font-medium border border-gray-200 shadow-sm">
+                        <span key={i} className="px-5 py-2.5 rounded-full bg-white text-gray-700 text-sm font-bold border border-gray-200 shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                           {tech}
                         </span>
                       ))}
@@ -141,30 +159,30 @@ export default function ProjectsSection() {
                   </div>
                 ) : (
                   /* Image on Right (Odd Index) */
-                  <div className="relative group">
+                  <div className="relative group w-full max-w-[300px] md:max-w-[550px]">
                      {/* Floating Title Tag */}
                      <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" 
-                        className={`absolute -top-12 right-0 z-20 px-6 py-2 rounded-lg text-white font-bold flex items-center gap-2 shadow-xl transform transition-transform hover:-translate-y-1 ${project.bgColor}`}>
-                        {project.title} <ExternalLink className="w-4 h-4" />
+                        className={`absolute -top-14 right-0 z-20 px-8 py-3 rounded-xl text-white font-bold flex items-center gap-2 shadow-2xl transform transition-all duration-300 hover:-translate-y-2 hover:scale-105 ${project.bgColor}`}>
+                        {project.title} <ExternalLink className="w-5 h-5" />
                         {/* Triangle */}
-                        <div className={`absolute -bottom-2 right-6 w-4 h-4 rotate-45 ${project.bgColor}`}></div>
+                        <div className={`absolute -bottom-2 right-8 w-4 h-4 rotate-45 ${project.bgColor}`}></div>
                      </a>
 
-                     {/* Laptop Container - Responsive Fix */}
-                     <div className="relative border-gray-800 bg-gray-800 border-[4px] md:border-[8px] rounded-t-xl w-full max-w-[300px] md:max-w-[512px] aspect-[512/294] shadow-2xl mx-auto overflow-hidden">
-                        <div className="rounded-lg overflow-hidden w-full h-full bg-white dark:bg-gray-800 group-hover:brightness-110 transition-all">
-                            <img src={project.image} alt={project.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                     {/* Laptop Container */}
+                     <div className="relative border-gray-800 bg-gray-800 border-[4px] md:border-[10px] rounded-t-2xl w-full aspect-[512/294] shadow-[0_20px_50px_rgba(0,0,0,0.3)] mx-auto overflow-hidden transform transition-transform duration-500 group-hover:scale-[1.02]">
+                        <div className="rounded-lg overflow-hidden w-full h-full bg-white dark:bg-gray-800">
+                            <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                         </div>
                      </div>
                      {/* Laptop Base */}
-                     <div className="relative mx-auto bg-gray-900 rounded-b-xl rounded-t-sm h-[10px] md:h-[17px] w-[115%] max-w-[350px] md:max-w-[597px] -ml-[7.5%] md:-ml-[42px] mt-0">
+                     <div className="relative mx-auto bg-gray-900 rounded-b-xl rounded-t-sm h-[12px] md:h-[20px] w-[110%] -ml-[5%] mt-0 shadow-xl">
                         <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[40%] h-[2px] md:h-[4px] bg-gray-700 rounded-b-lg"></div>
                      </div>
                   </div>
                 )}
               </div>
 
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
